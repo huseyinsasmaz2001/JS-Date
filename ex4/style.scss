@@ -1,0 +1,89 @@
+/* Import de la police Orbitron */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+
+/* Styles généraux */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Styles pour la carte */
+.card {
+  width: 400px;
+  height: 500px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  .top, .bottom {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+  }
+
+  .top {
+    background-color: red;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 20px 0;
+    .dayOfWeek {
+      font-size: 70px;
+    }
+  }
+
+  .middle {
+    text-align: center;
+    font-size: 90px;
+    background-color: rgb(250, 249, 249);
+    color: rgb(247, 245, 245);
+    font-family: 'Orbitron', sans-serif;
+    .date {
+      color: rgb(115, 112, 112);
+      font-weight: bold;
+    }
+  }
+
+  .bottom {
+    background-color: red;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 20px 0;
+  }
+}
+
+/* Styles pour l'affichage de l'heure */
+.time {
+  font-size: 80px;
+  margin-right: 35%;
+  font-family: 'Orbitron', sans-serif;
+  color: red;
+}
+
+/* Media queries pour rendre le design responsive */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+    height: auto;
+
+    .top, .bottom {
+      border-radius: 0;
+      padding: 15px 0;
+    }
+  }
+
+  .time {
+    order: -1; /* Met l'horloge en haut de la pile, la plaçant en bas de la carte en mode responsive */
+    margin-right: 0;
+    margin-top: 20px;
+  }
+}
